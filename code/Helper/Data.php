@@ -122,7 +122,7 @@ class Jarlssen_CmsFiles_Helper_Data extends Mage_Core_Helper_Abstract
                 '_package' => $package,
                 '_theme'   => $theme,
                 '_type'    => null,
-            )) . DS . 'template';
+            )) . 'template';
         }
         return $this->_templateDir[$storeId];
     }
