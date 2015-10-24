@@ -117,12 +117,13 @@ class Jarlssen_CmsFiles_Helper_Data extends Mage_Core_Helper_Abstract
                 $theme = Mage_Core_Model_Design_Package::DEFAULT_THEME;
             }
 
-            $this->_templateDir[$storeId] = Mage::getDesign()->getBaseDir(array(
-                '_area'    => Mage_Core_Model_App_Area::AREA_FRONTEND,
-                '_package' => $package,
-                '_theme'   => $theme,
-                '_type'    => null,
-            )) . 'template';
+
+            // Files are located in /app/locale/[locale_code]/ folder
+            $locale = Mage::getStoreConfig('general/locale/code', $storeId);
+            $dir = Mage::getBaseDir('locale') . DS . $locale . DS . 'template';
+
+            $this->_templateDir[$storeId] = $dir;
+
         }
         return $this->_templateDir[$storeId];
     }
