@@ -15,7 +15,7 @@ class Jarlssen_CmsFiles_Block_Adminhtml_Notifications extends Mage_Adminhtml_Blo
      */
     protected function _toHtml()
     {
-        if (Mage::getSingleton('admin/session')->isAllowed('system/index') and Mage::getStoreConfig('cms/dev/file_override')) {
+        if (Mage::getSingleton('admin/session')->isAllowed('system/index') && Mage::getStoreConfig('cms/dev/file_override')) {
             return <<<EOF
 <div class="notification-global">
     <strong>CMS Developer Override is enabled</strong>

@@ -55,11 +55,11 @@ class Jarlssen_CmsFiles_Helper_Data extends Mage_Core_Helper_Abstract
             $identifier = $identifier->getIdentifier();
         }
 
-        $filename = $identifier . '_' . $storeId;
+        $filename = $identifier;
 
         $path = $this->_paths[$cfg][$storeId] . DS . $filename . '.phtml';
 
-        if ($checkFileExists AND !file_exists($path)) {
+        if ($checkFileExists && !file_exists($path)) {
             $path = '';
         }
 

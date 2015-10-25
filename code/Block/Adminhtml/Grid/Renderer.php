@@ -20,10 +20,9 @@ class Jarlssen_CmsFiles_Block_Adminhtml_Grid_Renderer extends Mage_Adminhtml_Blo
             ));
             $html .= "<a href=\"$fileUrl\">&gt;&nbsp;Files</a>";
 
-            if($row->getMergeState() != Jarlssen_CmsFiles_Helper_Data::STATE_NO_FILE) {
+            if ($row->getMergeState() != Jarlssen_CmsFiles_Helper_Data::STATE_NO_FILE) {
                 $dbUrl = Mage::helper('adminhtml')->getUrl("*/cmsfiles_merge_$model/db", array(
                     'id' => $row->getId(),
-                    // 'store_id' => $storeId,
                 ));
                 $html .= "<br><a href=\"$dbUrl\">&gt;&nbsp;DB</a>";
             }
